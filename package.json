@@ -1,0 +1,32 @@
+{
+  "name": "rackscope",
+  "version": "1.0.0",
+  "description": "Rackscope is an open source dashboard for people who run their own servers (Proxmox, Ubuntu Server with Docker, Raspberry Pi). It shows the live state of your host, virtual machines, LXC containers and Docker containers in one place, and doubles as a homepage with links to your self-hosted services.",
+  "homepage": "https://github.com/eloriente/rackscope#readme",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web \"npm run dev -w @rackscope/server\" \"npm run dev -w @rackscope/web\"",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "bugs": {
+    "url": "https://github.com/eloriente/rackscope/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eloriente/rackscope.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
